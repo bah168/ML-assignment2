@@ -129,9 +129,6 @@ def logistic_regression(kfold, xtrain, ytrain, xtest, ytest, xval, yval, score_t
     classifier = LogisticRegression()
     classifier.fit(xtrain, ytrain.ravel())
 
-    print('Accuracy of logistic regression classifier fold: {} on test set: {:.3f}'.format(kfold+1, classifier.score(xtest, ytest)))
-    print('Accuracy of logistic regression classifier fold: {} on validation set: {:.3f}'.format(kfold+1, classifier.score(xval, yval)))
-
     score_test.append('{:.3f}'.format(classifier.score(xtest, ytest)))
     score_val.append('{:.3f}'.format(classifier.score(xval, yval)))
 
